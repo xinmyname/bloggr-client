@@ -27,16 +27,11 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
-          <table class='table'>
-            <thead>
-              <tr><th>Recent Posts</th></tr>
-            </thead>
-            {{#each model}}
-            <tr><td>
-                {{#link-to 'post' this}}{{title}} <small class='muted'>by {{author.name}}</small>{{/link-to}}
-            </td></tr>
-            {{/each}}
-          </table>
+          {{ view Ember.Select
+            contentBinding="model"
+            optionValuePath="content.id"
+            optionLabelPath="content.title"
+          }}
         </div>
         <div class="span9">
           {{outlet}}
