@@ -35,6 +35,17 @@ App.PostRoute = Ember.Route.extend({
   }
 });
 
+App.PostsController = Ember.ArrayController.extend({
+  selectedPost: null,
+
+  postChanged: function() {
+    if (this.selectedPost) {
+      this.transitionToRoute('post', this.selectedPost);
+    }
+  }.observes('selectedPost')
+
+});
+
 App.PostController = Ember.ObjectController.extend({
   isEditing: false,
 

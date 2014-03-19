@@ -29,8 +29,10 @@
         <div class="span3">
           {{ view Ember.Select
             contentBinding="model"
+            selectionBinding="selectedPost"
             optionValuePath="content.id"
             optionLabelPath="content.title"
+            prompt="Choose a blog post..."
           }}
         </div>
         <div class="span9">
